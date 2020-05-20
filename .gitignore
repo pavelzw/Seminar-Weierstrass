@@ -19,4 +19,6 @@ __latexindent_temp.tex
 *.nav
 *.snm
 
+*out/
+
 !kitlogo_de_rgb.pdf
