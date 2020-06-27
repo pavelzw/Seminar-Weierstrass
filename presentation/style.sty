@@ -1,0 +1,51 @@
+\ProvidesPackage{style}
+
+\RequirePackage[ngerman]{babel}
+\RequirePackage[utf8]{inputenc} %Umlaute
+\RequirePackage{graphicx} %Grafiken einbinden
+\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{mathrsfs}
+\RequirePackage{marvosym}
+\RequirePackage{tikz}
+
+\let\oldforall\forall
+\renewcommand{\forall}{\oldforall \,}
+\let\oldexists\exists
+\renewcommand{\exists}{\oldexists \,}
+
+\newenvironment{bew}{\begin{proof}[Beweis]}{\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{satz}{Satz}
+\newtheorem*{satz*}{Satz}
+\newtheorem{kor}[satz]{Korollar}
+\newtheorem{lem}[satz]{Lemma}
+
+\newtheorem{defi}[satz]{Definition}
+\newtheorem{satzdefi}[satz]{Satz und Definition}
+\newtheorem*{notation}{Notation}
+\newtheorem*{defi*}{Definition} % Für Sachen, die Definitionen sind, aber keine Nummer haben
+\newtheorem*{beh}{Behauptung}
+\newtheorem{bem}{Bemerkung}[satz]
+
+\theoremstyle{remark}
+\newtheorem*{bsp}{Beispiel}
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\C0}{\mathcal{C}^0(M)}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\F}{\mathbb{F}}
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
+\newcommand{\abb}[3]{\ensuremath{#1:#2\rightarrow #3}}
+\newcommand{\scalarprod}[2]{\ensuremath{\langle #1, #2 \rangle}}
+
+\newcommand{\set}[1]{\{#1\}}
