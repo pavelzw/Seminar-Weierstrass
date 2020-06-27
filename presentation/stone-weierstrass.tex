@@ -1,5 +1,56 @@
 \section{Approximationssatz von Stone-Weierstraß}
 
-\begin{frame}
-    
+\begin{frame}{Funktionenalgebra}
+    \begin{defi*}{Funktionenalgebra}
+        Eine Menge \( \mathcal{A} \subset \mathcal{C}^0(M) \) heißt 
+        \textit{Funktionenalgebra}, wenn sie geschlossen unter Addition, 
+        skalarer Multiplikation und Funktionenmultiplikation ist, 
+        d. h. \( \forall f,g \in \A, c \in \mathbb{R} \)
+        \[ f + g \in \mathcal{A}, \quad c \cdot f \in \mathcal{A}, \quad f \cdot g \in \mathcal{A}. \]
+    \end{defi*}
+\end{frame}
+
+\begin{frame}{Funktionenalgebra}
+    \begin{defi*}{Verschwinden}
+        Eine Funktionenalgebra \(\A \subset \C0\) 
+        \textit{verschwindet} an einem Punkt \(p \in M\), falls 
+        \[ f(p) = 0 \;\forall f \in \mathcal{A}. \]
+    \end{defi*}
+    \begin{bsp}
+        \( \A := \set{ x \mapsto \sum_{j=1}^n a_n x^n \;|\; n\in \N, a_j \in \R, j = 1,\ldots, n } \subset \mathcal{C}^0([-1,1]) \) 
+        verschwindet im Punkt \(0\).
+    \end{bsp}
+\end{frame}
+
+\begin{frame}{Punkte unterscheiden}
+    \begin{defi*}
+        Eine Funktionenalgebra \(\A \subset \C0\) \textit{unterscheidet Punkte}, 
+        wenn \( \forall p_1, p_2 \in M \) eine Funktion \(f \in \A\) existiert, 
+        sodass \( f(p_1) \neq f(p_2) \).
+    \end{defi*}
+    \begin{bsp}
+        \( \A := \set{ x \mapsto \sum_{j=0}^n a_{j} x^{2j} \;|\; n\in\N, a_j \in \R, j = 1,\ldots, n } 
+        \subset \mathcal{C}^0([-1,1]) \)
+        separiert die Punkte \( z \) und \(-z\) (\(z \in [-1,1] \setminus \set{0} \)) nicht, da \( \forall f \in \A \) gilt 
+        \( f(z) = f(-z) \).
+    \end{bsp}
+    \begin{bsp}
+        Die Funktionenalgebra aller trigonometrischen Polynome auf \( [0,2\pi) \) 
+        separiert Punkte und verschwindet nirgends.
+    \end{bsp}
+\end{frame}
+
+\begin{frame}{Satz von Stone-Weierstrass}
+    \begin{satz*}{Satz von Stone-Weierstrass}
+        Sei \(M\) ein kompakter metrischer Raum und \( \mathcal{A} \) eine 
+        Funktionenalgebra in \( \mathcal{C}^0(M) \) die nirgends verschwindet und 
+        Punkte unterscheidet. 
+        Dann ist \( \mathcal{A} \) dicht in \( \mathcal{C}^0(M) \).
+    \end{satz*}
+
+    \begin{bem}
+        Der Satz von Stone-Weierstrass ist offensichtlich eine Verallgemeinerung 
+        des Satzes von Weierstrass. 
+        Wir benötigen die Aussage des Satzes von Weierstrass für den Beweis von Stone-Weierstrass.
+    \end{bem}
 \end{frame}
