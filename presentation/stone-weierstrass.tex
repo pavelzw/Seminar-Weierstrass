@@ -43,8 +43,8 @@
     \end{bsp}
 \end{frame}
 
-\begin{frame}{Satz von Stone-Weierstrass}
-    \begin{satz}[Satz von Stone-Weierstrass]
+\begin{frame}{Satz von Stone-Weierstraß}
+    \begin{satz}[Satz von Stone-Weierstraß]
         Sei \(M\) ein kompakter metrischer Raum und \( \mathcal{A} \) eine 
         Funktionenalgebra in \( \mathcal{C}^0(M) \) die nirgends verschwindet und 
         Punkte unterscheidet. 
@@ -52,9 +52,9 @@
     \end{satz}
     \pause
     \begin{bem}
-        Der Satz von Stone-Weierstrass ist offensichtlich eine Verallgemeinerung 
-        des Satzes von Weierstrass. 
-        Wir benötigen die Aussage des Satzes von Weierstrass für den Beweis von Stone-Weierstrass.
+        Der Satz von Stone-Weierstraß ist offensichtlich eine Verallgemeinerung 
+        des Satzes von Weierstraß. 
+        Wir benötigen die Aussage des Satzes von Weierstraß für den Beweis von Stone-Weierstraß.
     \end{bem}
 \end{frame}
 
@@ -117,8 +117,54 @@
 
 \begin{frame}
     \begin{lem}
-        Sei \( \A \subset \CM \) eine Funktionenalgebra. 
-        Dann ist \( \bar{\A} \) ebenfalls eine Funktionenalgebra.
+        Sei \( \A \subset \CM \) eine Funktionenalgebra 
+        sowie \(M\) ein kompakter metrischer Raum.
+        Dann ist \( \Abar \) ebenfalls eine Funktionenalgebra.
     \end{lem}
-    Beweis: Stimmt so. \qed
+    Beweis: \pause 
+    Stimmt so. \qed
+\end{frame}
+
+\begin{frame}
+    \begin{lem}
+        Sei \( \A \subset \CM \) eine Funktionenalgebra. Dann gilt 
+        \[ f \in \Abar \Rightarrow \abs{f} \in \Abar \]
+        sowie 
+        \[ f_1, \ldots, f_n \in \Abar \Rightarrow \max(f_1,\ldots, f_n), \min(f_1,\ldots, f_n) \in \Abar. \]
+    \end{lem} \pause
+    Beweis:
+    Nach dem Satz von Weierstraß existiert ein Polynom 
+    \( p(y) \), sodass 
+    \[ \sup \set{ \abs{ p(y) - \abs{y} } 
+    \;|\; \abs{y} \leq \norm{f} } < \frac{\varepsilon}{2}, \]
+    da \( \abs{y} \in \C([-\norm{f}, \norm{f}]) \). 
+    \pause
+
+    Der konstante Term dieses Polynoms ist höchstens \( \varepsilon / 2 \), 
+    da \( \abs{ p(0) - \abs{0} } < \varepsilon/2 \).
+\end{frame}
+
+\begin{frame}
+    Sei \( q := p - p(0) \). Dann ist \( q(y) \) ein 
+    Polynom mit Konstante \(0\) und es gilt 
+    \[ \abs{ q(y) - \abs{y} } < \varepsilon 
+    \;\forall y \in [-\norm{f}, \norm{f}]. \]
+    \pause
+
+    Schreiben wir nun \( q \) als 
+    \( q(y) = a_1 y + a_2 y^2 + \cdots + a_n y^n \) und 
+    \[ g = a_1 f + a_2 f^2 + \cdots + a_n f^n. \]
+    \pause
+
+    Da \( \Abar \) eine Funktionenalgebra nach Lemma 3 (TODO)
+    und somit gilt 
+    \( g \in \Abar \). 
+    \pause
+
+    Sei \( x\in M \) und \( y = f(x) \). Dann gilt 
+    \[ \abs{ g(x) - \abs{f(x)} } = \abs{ q(y) - \abs{y} } < \varepsilon. \]
+    \pause
+    
+    Also folgt \( \abs{f} \in \Abarbar = \Abar \). 
+\end{frame}
 \end{frame}
