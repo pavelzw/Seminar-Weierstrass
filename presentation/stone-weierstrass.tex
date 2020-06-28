@@ -167,4 +167,74 @@
     
     Also folgt \( \abs{f} \in \Abarbar = \Abar \). 
 \end{frame}
+
+\begin{frame}
+    Außerdem gilt falls \(f,g \in \Abar \)
+    \pause
+    \begin{align*}
+        \max(f,g) &= \frac{f+g}{2} + \frac{\abs{f-g}}{2}, \\
+        \min(f,g) &= \frac{f+g}{2} - \frac{\abs{f-g}}{2}.
+    \end{align*} 
+    \pause
+    Also gilt \( \max(f,g), \min(f,g) \in \Abar \). 
+    \pause
+
+    Mittels Wiederholung können wir dies für beliebige 
+    \( f_1, \ldots, f_n \in \Abar \) fortführen.
+    \qed
+\end{frame}
+
+\begin{frame}{Beweis vom Satz von Stone-Weierstraß}
+    Sei \( \A \) eine Funktionenalgebra in \(\CM\), die nirgends verschwindet und 
+    Punkte unterscheidet. \pause
+    Wir zeigen nun, dass \( \A \) dicht in \(\CM\) ist. \pause
+    D. h. für ein gegebenes \( F \in \CM, \varepsilon > 0 \) 
+    müssen wir ein \( G \in \A \) finden, sodass 
+    \[ F(x) - \varepsilon < G(x) < F(x) + \varepsilon. \]
+    \pause
+
+    Wir betrachten nun zwei Punkte \(p\neq q \in M\).
+    Nach Lemma 2 (TODO) existiert ein \(H_{pq} \in \A\), 
+    sodass 
+    \[ H_{pq}(p) = F(p), \quad H_{pq}(q) = F(q). \]
+
+    Wir fixieren nun \(p\). \pause
+    Für jedes \(q \in M\) existiert eine Umgebung 
+    \( U_q \), sodass 
+    \[ x \in U_q \Rightarrow F(x) - \varepsilon < H_{pq}(x). \] 
+    % H_{pq} ist stetig
+\end{frame}
+
+% Figure 96
+
+\begin{frame}
+    \( M \) ist kompakt \( \Rightarrow \) endlich viele 
+    \( U_{q_1}, \ldots, U_{q_n} \) überdecken \(M\). \pause
+    Sei 
+    \[ G_p := \max(H_{pq_1}, \ldots, H_{pq_n}). \]
+    \pause
+    Nach Lemma 4 (TODO) gilt \( G_p \in \Abar \).
+    Es gilt nun \(G_p(p) = F(p)\) sowie \( \forall x \in M \)
+    \[ F(x) - \varepsilon < G_p(x). \]
+
+    Sei nun \(p\) variabel. \pause
+    Aus der Stetigkeit von \(G_p\) folgt, dass für jedes \(p \in M\) 
+    eine Umgebung \(V_p\) existiert, sodass 
+    \[ x_p \in V_p \Rightarrow G_p(x) < F(x) + \varepsilon. \]
+    \pause
+\end{frame}
+
+\begin{frame}
+    Nun folgt wieder aus der Kompaktheit von \(M\), dass 
+    endlich viele \( V_{p_1}, \ldots, V_{p_m} \) \(M\) überdecken.
+    \pause
+    Sei 
+    \[ G := \min(G_{p_1}, \ldots, G_{p_m}). \]
+
+    Es folgt nun aus Lemma 4 (TODO)
+    \( G \in \Abar \) sowie 
+    \[ F(x) - \varepsilon < G(x) < F(x) + \varepsilon \;\forall x \in M. \]
+    \pause
+
+    Somit liegt \(\A\) dicht in \( \CM \). \qed
 \end{frame}
