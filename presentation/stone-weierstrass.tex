@@ -12,7 +12,7 @@
 
 \begin{frame}{Funktionenalgebra}
     \begin{defi}[Verschwinden]
-        Eine Funktionenalgebra \(\A \subset \C\) 
+        Eine Funktionenalgebra \(\A \subset \CM\) 
         \textit{verschwindet} an einem Punkt \(p \in M\), falls 
         \[ f(p) = 0 \;\forall f \in \mathcal{A}. \]
     \end{defi}
@@ -25,7 +25,7 @@
 
 \begin{frame}{Punkte unterscheiden}
     \begin{defi}
-        Eine Funktionenalgebra \(\A \subset \C\) \textit{unterscheidet Punkte}, 
+        Eine Funktionenalgebra \(\A \subset \CM\) \textit{unterscheidet Punkte}, 
         wenn \( \forall p_1, p_2 \in M \) eine Funktion \(f \in \A\) existiert, 
         sodass \( f(p_1) \neq f(p_2) \).
     \end{defi}
@@ -56,4 +56,61 @@
         des Satzes von Weierstrass. 
         Wir benötigen die Aussage des Satzes von Weierstrass für den Beweis von Stone-Weierstrass.
     \end{bem}
+\end{frame}
+
+\begin{frame}
+    \begin{lem}
+        Sei \( \A \subset \CM \) eine Funktionenalgebra, die nirgends verschwindet 
+        und Punkte unterscheidet. 
+        Dann existiert für beliebige \( p_1, p_2 \in M, p_1\neq q_2, 
+        c_1, c_2 \in \R \)
+        ein \(f \in \A\) mit 
+        \[ f(p_1) = c_1, \quad f(p_2) = c_2. \]
+    \end{lem}
+\end{frame}
+
+\begin{frame}{Beweis von Lemma 3}
+    Seien \( p_1, p_2 \in M \) und \( c_1, c_2 \in \R \) gegeben. 
+    \pause
+
+    Da \(\A\) nirgends verschwindet, existieren \( g_1, g_2 \in \A \), 
+    sodass 
+    \( g_1(p_1) \neq 0, g_2(p_2) \neq 0 \). 
+    \pause
+
+    Also gilt \( g := g_1^2 + g_2^2 \in \A \). \(g\) verschwindet weder in \(p_1\) noch \(p_2\).
+    \pause 
+
+    \(\A\) unterscheidet Punkte, also existiert ein \( h \in \A \), sodass 
+    \( h(p_1) \neq h(p_2) \).
+    \pause 
+    Betrachten wir die Matrix 
+
+    \[ H = \begin{pmatrix}
+        a & ab \\
+        c & cd
+    \end{pmatrix} = \begin{pmatrix}
+        g(p_1) & g(p_1) h(p_1) \\
+        g(p_2) & g(p_2) h(p_2)
+    \end{pmatrix}. \]
+
+    Nach Konstruktion gilt 
+    \( a, c \neq 0 \) sowie \(b \neq d\). Also gilt \( \det H = acd - abc = ac(d - b) \neq 0 \). 
+\end{frame}
+
+\begin{frame}
+    Somit hat das LGS 
+    \begin{align*}
+        a \xi + ab \eta &= c_1 \\
+        c \xi + cd \eta &= c_2
+    \end{align*}
+
+    genau eine Lösung für \( \xi \) und \( \eta \). 
+    \pause
+    Sei \( f := \xi g + \eta g h \). Offensichtlich ist \( f \in \A \) und es gilt 
+    \begin{align*}
+        f(p_1) &= \xi g(p_1) + \eta g(p_1) h(p_1) = c_1, \\
+        f(p_2) &= \xi g(p_2) + \eta g(p_2) h(p_2) = c_2.
+    \end{align*}
+    \qed
 \end{frame}
