@@ -1,21 +1,21 @@
 \section{Approximationssatz von Stone-Weierstraß}
 
 \begin{frame}{Funktionenalgebra}
-    \begin{defi*}[Funktionenalgebra]
+    \begin{defi}[Funktionenalgebra]
         Eine Menge \( \mathcal{A} \subset \mathcal{C}^0(M) \) heißt 
         \textit{Funktionenalgebra}, wenn sie geschlossen unter Addition, 
         skalarer Multiplikation und Funktionenmultiplikation ist, 
         d.~h. \( \forall f,g \in \A, c \in \mathbb{R} \)
         \[ f + g \in \mathcal{A}, \quad c \cdot f \in \mathcal{A}, \quad f \cdot g \in \mathcal{A}. \]
-    \end{defi*}
+    \end{defi}
 \end{frame}
 
 \begin{frame}{Funktionenalgebra}
-    \begin{defi*}[Verschwinden]
+    \begin{defi}[Verschwinden]
         Eine Funktionenalgebra \(\A \subset \C\) 
         \textit{verschwindet} an einem Punkt \(p \in M\), falls 
         \[ f(p) = 0 \;\forall f \in \mathcal{A}. \]
-    \end{defi*}
+    \end{defi}
     \pause
     \begin{bsp}
         \( \A := \set{ x \mapsto \sum_{j=1}^n a_n x^n \;|\; n\in \N, a_j \in \R, j = 1,\ldots, n } \subset \mathcal{C}^0([-1,1]) \) 
@@ -24,11 +24,11 @@
 \end{frame}
 
 \begin{frame}{Punkte unterscheiden}
-    \begin{defi*}
+    \begin{defi}
         Eine Funktionenalgebra \(\A \subset \C\) \textit{unterscheidet Punkte}, 
         wenn \( \forall p_1, p_2 \in M \) eine Funktion \(f \in \A\) existiert, 
         sodass \( f(p_1) \neq f(p_2) \).
-    \end{defi*}
+    \end{defi}
     \pause
     \begin{bsp}
         \( \A := \set{ x \mapsto \sum_{j=0}^n a_{j} x^{2j} \;|\; n\in\N, a_j \in \R, j = 1,\ldots, n } 
@@ -51,9 +51,9 @@
         Dann ist \( \mathcal{A} \) dicht in \( \mathcal{C}^0(M) \).
     \end{satz}
     \pause
-    \begin{bem*}
+    \begin{bem}
         Der Satz von Stone-Weierstrass ist offensichtlich eine Verallgemeinerung 
         des Satzes von Weierstrass. 
         Wir benötigen die Aussage des Satzes von Weierstrass für den Beweis von Stone-Weierstrass.
-    \end{bem*}
+    \end{bem}
 \end{frame}
