@@ -243,3 +243,26 @@
     Also liegt auch \( \A \) dicht in \(\CM\).
     \qed
 \end{frame}
+
+\section*{Anwendungen von Stone-Weierstraß}
+
+\begin{frame}
+    \begin{satz}
+        Jede \(2\pi\)-periodische stetige Funktion kann gleichmäßig durch ein trigonometrisches Polynom 
+        \[ T(x) = a_0 + \sum_{k=1}^n a_k \cos(kx) + \sum_{k=1}^n b_k \sin(kx) \]
+        approximiert werden.
+    \end{satz}
+    \pause
+    Beweis:
+    \( [0,2\pi) \) parametrisiert den Einheitskreis \(S^1\) durch \( x \mapsto (\cos x, \sin x) \). 
+    \pause
+    \(S^1\) ist kompakt und jede \(2\pi\)-periodische Funktion auf \(\R\) wird hier zu einer 
+    stetigen Funktion auf \(S^1\).
+    \pause
+
+    Die trigonometrischen Polynome bilden eine Funktionenalgebra \( \mathcal{T} \subset \C(S^1) \), 
+    die \textit{nirgends verschwindet} und \textit{Punkte unterscheidet}.
+    \pause
+
+    Nach dem Satz von Stone-Weierstraß liegt \( \mathcal{T} \) dicht in \( \C(S^1) \). \qed
+\end{frame}
