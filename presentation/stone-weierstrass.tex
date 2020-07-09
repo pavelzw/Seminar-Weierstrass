@@ -10,7 +10,7 @@
     \end{defi}
 \end{frame}
 
-\begin{frame}{Funktionenalgebra}
+\begin{frame}{Verschwinden}
     \begin{defi}[Verschwinden]
         Eine Funktionenalgebra \(\A \subset \CM\) 
         \textit{verschwindet} an einem Punkt \(p \in M\), falls 
@@ -33,7 +33,7 @@
     \begin{bsp}
         \( \A := \set{ x \mapsto \sum_{j=0}^n a_{j} x^{2j} \;|\; n\in\N, a_j \in \R, j = 1,\ldots, n } 
         \subset \mathcal{C}^0([-1,1]) \)
-        separiert die Punkte \( z \) und \(-z\) (\(z \in [-1,1] \setminus \set{0} \)) nicht, da \( \forall f \in \A \) gilt 
+        unterscheidet die Punkte \( z \) und \(-z\) (\(z \in [-1,1] \setminus \set{0} \)) nicht, da \( \forall f \in \A \) gilt 
         \( f(z) = f(-z) \).
     \end{bsp}
     \pause
@@ -62,7 +62,7 @@
     \begin{lem}
         Sei \( \A \subset \CM \) eine Funktionenalgebra, die nirgends verschwindet 
         und Punkte unterscheidet. 
-        Dann existiert für beliebige \( p_1, p_2 \in M, p_1\neq q_2, 
+        Dann existiert für beliebige \( p_1, p_2 \in M, p_1\neq p_2, 
         c_1, c_2 \in \R \)
         ein \(f \in \A\) mit 
         \[ f(p_1) = c_1, \quad f(p_2) = c_2. \]
@@ -93,6 +93,7 @@
         g(p_1) & g(p_1) h(p_1) \\
         g(p_2) & g(p_2) h(p_2)
     \end{pmatrix}. \]
+    \pause
 
     Nach Konstruktion gilt 
     \( a, c \neq 0 \) sowie \(b \neq d\). Also gilt \( \det H = acd - abc = ac(d - b) \neq 0 \). 
@@ -107,7 +108,9 @@
 
     genau eine Lösung für \( \xi \) und \( \eta \). 
     \pause
-    Sei \( f := \xi g + \eta g h \). Offensichtlich ist \( f \in \A \) und es gilt 
+    Sei \( f := \xi g + \eta g h \). \pause 
+    Offensichtlich ist \( f \in \A \) \pause 
+    und es gilt 
     \begin{align*}
         f(p_1) &= \xi g(p_1) + \eta g(p_1) h(p_1) = c_1, \\
         f(p_2) &= \xi g(p_2) + \eta g(p_2) h(p_2) = c_2.
@@ -197,51 +200,77 @@
     Nach Lemma 2 (TODO) existiert ein \(H_{pq} \in \A\), 
     sodass 
     \[ H_{pq}(p) = F(p), \quad H_{pq}(q) = F(q). \]
-
-    Wir fixieren nun \(p\). \pause
-    Für jedes \(q \in M\) existiert eine Umgebung 
-    \( U_q \), sodass 
-    \[ x \in U_q \Rightarrow F(x) - \varepsilon < H_{pq}(x). \] 
-    % H_{pq} ist stetig
 \end{frame}
 
-% Figure 96
+\begin{frame}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            Wir fixieren nun \(p\).
+            \onslide<2->{Für jedes \(q \in M\) existiert eine Umgebung 
+            \( U_q \)}\onslide<3->{, sodass 
+            \[ x \in U_q \Rightarrow F(x) - \varepsilon < H_{pq}(x). \]}
+            % H_{pq} ist stetig
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \includegraphics[width=\textwidth]{images/stone-weierstrass-step1.png}
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \begin{frame}
     % todo Memo mit Überdeckungskompaktheit
-    \( M \) ist kompakt \( \Rightarrow \) endlich viele 
-    \( U_{q_1}, \ldots, U_{q_n} \) überdecken \(M\). \pause
-    Sei 
-    \[ G_p := \max(H_{pq_1}, \ldots, H_{pq_n}). \]
-    \pause
-    Nach Lemma 4 (TODO) gilt \( G_p \in \Abar \).
-    Es gilt nun \(G_p(p) = F(p)\) sowie \( \forall x \in M \)
-    \[ F(x) - \varepsilon < G_p(x). \]
-
-    Sei nun \(p\) variabel. \pause
-    Aus der Stetigkeit von \(G_p\) folgt, dass für jedes \(p \in M\) 
-    eine Umgebung \(V_p\) existiert, sodass 
-    \[ x_p \in V_p \Rightarrow G_p(x) < F(x) + \varepsilon. \]
-    \pause
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \( M \) ist kompakt \( \Rightarrow \) endlich viele 
+            \( U_{q_1}, \ldots, U_{q_n} \) überdecken \(M\).
+            \onslide<2->{Sei 
+            \[ G_p := \max(H_{pq_1}, \ldots, H_{pq_n}). \]}
+            
+            \onslide<4->{Nach Lemma 4 (TODO) gilt \( G_p \in \Abar \).}
+            \onslide<5->{Es gilt nun \(G_p(p) = F(p)\)} \onslide<6->{sowie \( \forall x \in M \)
+            \[ F(x) - \varepsilon < G_p(x). \]}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \onslide<3->{\includegraphics[width=\textwidth]{images/stone-weierstrass-step2.png}}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-    Nun folgt wieder aus der Kompaktheit von \(M\), dass 
-    endlich viele \( V_{p_1}, \ldots, V_{p_m} \) \(M\) überdecken.
-    \pause
-    Sei 
-    \[ G := \min(G_{p_1}, \ldots, G_{p_m}). \]
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            Sei nun \(p\) variabel.
+            \onslide<2->{\(G_p\) stetig}
+            \onslide<3->{\( \Rightarrow \forall p \in M \;\exists V_p: \)
+            \[ x_p \in V_p \Rightarrow G_p(x) < F(x) + \varepsilon. \]}
 
-    Es folgt nun aus Lemma 4 (TODO)
-    \( G \in \Abar \) sowie 
-    \[ F(x) - \varepsilon < G(x) < F(x) + \varepsilon \;\forall x \in M. \]
-    \pause
+            \onslide<5->{Nun folgt wieder aus der Kompaktheit von \(M\), dass 
+            endlich viele \( V_{p_1}, \ldots, V_{p_m} \) \(M\) überdecken.}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \onslide<4->{\includegraphics[width=\textwidth]{images/stone-weierstrass-step3.png}}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-    Also liegt \( \Abar \) dicht in \( \CM \)\pause, d. h. \( \Abar = \Abarbar = \CM \).
-    \pause
+\begin{frame}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            Sei \( G := \min(G_{p_1}, \ldots, G_{p_m}) \).
 
-    Also liegt auch \( \A \) dicht in \(\CM\).
-    \qed
+            \onslide<3->{Es folgt nun aus Lemma 4 (TODO)
+            \( G \in \Abar \)} \onslide<4->{sowie 
+            \[ F(x) - \varepsilon < G(x) < F(x) + \varepsilon \;\forall x \in M. \]}
+
+            \onslide<5->{Also liegt \( \Abar \) dicht in \( \CM \)}\onslide<6->{, d. h. \( \Abar = \Abarbar = \CM \).}
+
+            \onslide<7->{Also liegt auch \( \A \) dicht in \(\CM\).
+            \qed}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \onslide<2->{\includegraphics[width=\textwidth]{images/stone-weierstrass-step4.png}}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \section*{Anwendungen von Stone-Weierstraß}
