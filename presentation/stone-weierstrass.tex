@@ -23,9 +23,9 @@
     \end{bsp}
 \end{frame}
 
-\begin{frame}{Punkte unterscheiden}
+\begin{frame}{Punktetrennend}
     \begin{defi}
-        Eine Funktionenalgebra \(\A \subset \CM\) \textit{unterscheidet Punkte}, 
+        Eine Funktionenalgebra \(\A \subset \CM\) ist \textit{punktetrennend}, 
         wenn \( \forall p_1, p_2 \in M \) eine Funktion \(f \in \A\) existiert, 
         sodass \( f(p_1) \neq f(p_2) \).
     \end{defi}
@@ -33,7 +33,7 @@
     \begin{bsp}
         \( \A := \set{ x \mapsto \sum_{j=0}^n a_{j} x^{2j} \;|\; n\in\N, a_j \in \R, j = 1,\ldots, n } 
         \subset \mathcal{C}^0([-1,1]) \)
-        unterscheidet die Punkte \( z \) und \(-z\) (\(z \in [-1,1] \setminus \set{0} \)) nicht, da \( \forall f \in \A \) gilt 
+        trennt die Punkte \( z \) und \(-z\) (\(z \in [-1,1] \setminus \set{0} \)) nicht, da \( \forall f \in \A \) gilt 
         \( f(z) = f(-z) \).
     \end{bsp}
     \pause
@@ -45,9 +45,8 @@
 
 \begin{frame}{Satz von Stone-Weierstraß}
     \begin{satz}[Satz von Stone-Weierstraß]
-        Sei \(M\) ein kompakter metrischer Raum und \( \mathcal{A} \) eine 
-        Funktionenalgebra in \( \mathcal{C}^0(M) \) die nirgends verschwindet und 
-        Punkte unterscheidet. 
+        Sei \(M\) ein kompakter metrischer Raum und \( \mathcal{A} \) eine punktetrennende
+        Funktionenalgebra in \( \mathcal{C}^0(M) \), die nirgends verschwindet. 
         Dann ist \( \mathcal{A} \) dicht in \( \mathcal{C}^0(M) \).
     \end{satz}
     \pause
@@ -59,9 +58,8 @@
 \end{frame}
 
 \begin{frame}
-    \begin{lem}
-        Sei \( \A \subset \CM \) eine Funktionenalgebra, die nirgends verschwindet 
-        und Punkte unterscheidet. 
+    \begin{lem}\label{bel-punkte}
+        Sei \( \A \subset \CM \) eine punktetrennende Funktionenalgebra, die nirgends verschwindet. 
         Dann existiert für beliebige \( p_1, p_2 \in M, p_1\neq p_2, 
         c_1, c_2 \in \R \)
         ein \(f \in \A\) mit 
@@ -69,7 +67,7 @@
     \end{lem}
 \end{frame}
 
-\begin{frame}{Beweis von Lemma 2}
+\begin{frame}{Beweis von Lemma \ref{bel-punkte}}
     Seien \( p_1, p_2 \in M \) und \( c_1, c_2 \in \R \) gegeben. 
     \pause
 
@@ -81,7 +79,7 @@
     Also gilt \( g := g_1^2 + g_2^2 \in \A \). \(g\) verschwindet weder in \(p_1\) noch \(p_2\).
     \pause 
 
-    \(\A\) unterscheidet Punkte, also existiert ein \( h \in \A \), sodass 
+    \(\A\) trennt Punkte, also existiert ein \( h \in \A \), sodass 
     \( h(p_1) \neq h(p_2) \).
     \pause 
     Betrachten wir die Matrix 
@@ -119,7 +117,7 @@
 \end{frame}
 
 \begin{frame}
-    \begin{lem}
+    \begin{lem}\label{abg-algebra}
         Sei \( \A \subset \CM \) eine Funktionenalgebra 
         sowie \(M\) ein kompakter metrischer Raum.
         Dann ist \( \Abar \) ebenfalls eine Funktionenalgebra.
@@ -129,7 +127,7 @@
 \end{frame}
 
 \begin{frame}
-    \begin{lem}
+    \begin{lem}\label{betrag-in-algebra}
         Sei \( \A \subset \CM \) eine Funktionenalgebra. Dann gilt 
         \[ f \in \Abar \Rightarrow \abs{f} \in \Abar \]
         sowie 
@@ -159,7 +157,7 @@
     \[ g = a_1 f + a_2 f^2 + \cdots + a_n f^n. \]
     \pause
 
-    Da \( \Abar \) eine Funktionenalgebra nach Lemma 3
+    Da \( \Abar \) eine Funktionenalgebra nach Lemma \ref{abg-algebra}
     und somit gilt 
     \( g \in \Abar \). 
     \pause
@@ -188,8 +186,7 @@
 \end{frame}
 
 \begin{frame}{Beweis vom Satz von Stone-Weierstraß}
-    Sei \( \A \) eine Funktionenalgebra in \(\CM\), die nirgends verschwindet und 
-    Punkte unterscheidet. \pause
+    Sei \( \A \) eine punktetrennende Funktionenalgebra in \(\CM\), die nirgends verschwindet. \pause
     Wir zeigen nun, dass \( \A \) dicht in \(\CM\) ist. \pause
     D. h. für ein gegebenes \( F \in \CM, \varepsilon > 0 \) 
     müssen wir ein \( G \in \A \) finden, sodass 
@@ -197,7 +194,7 @@
     \pause
 
     Wir betrachten nun zwei Punkte \(p\neq q \in M\).
-    Nach Lemma 2 existiert ein \(H_{pq} \in \A\), 
+    Nach Lemma \ref{bel-punkte} existiert ein \(H_{pq} \in \A\), 
     sodass 
     \[ H_{pq}(p) = F(p), \quad H_{pq}(q) = F(q). \]
 \end{frame}
@@ -226,7 +223,7 @@
             \onslide<2->{Sei 
             \[ G_p := \max(H_{pq_1}, \ldots, H_{pq_n}). \]}
             
-            \onslide<4->{Nach Lemma 4 gilt \( G_p \in \Abar \).}
+            \onslide<4->{Nach Lemma \ref{betrag-in-algebra} gilt \( G_p \in \Abar \).}
             \onslide<5->{Es gilt nun \(G_p(p) = F(p)\)} \onslide<6->{sowie \( \forall x \in M \)
             \[ F(x) - \varepsilon < G_p(x). \]}
         \end{column}
@@ -258,7 +255,7 @@
         \begin{column}{0.4\textwidth}
             Sei \( G := \min(G_{p_1}, \ldots, G_{p_m}) \).
 
-            \onslide<3->{Es folgt nun aus Lemma 4
+            \onslide<3->{Es folgt nun aus Lemma \ref{betrag-in-algebra}
             \( G \in \Abar \)} \onslide<4->{sowie 
             \[ F(x) - \varepsilon < G(x) < F(x) + \varepsilon \;\forall x \in M. \]}
 
@@ -290,8 +287,31 @@
     \pause
 
     Die trigonometrischen Polynome bilden eine Funktionenalgebra \( \mathcal{T} \subset \C(S^1) \), 
-    die \textit{nirgends verschwindet} und \textit{Punkte unterscheidet}.
+    die \textit{nirgends verschwindet} und \textit{Punkte trennt}.
     \pause
 
     Nach dem Satz von Stone-Weierstraß liegt \( \mathcal{T} \) dicht in \( \C(S^1) \). \qed
+\end{frame}
+
+\newcommand{\B}{\overline{B_1(0)}}
+
+\begin{frame}{Vektorfelder}
+    Betrachten wir ein stetiges Vektorfeld 
+    \( \abb{F}{\B}{\R^2} \).\pause
+
+    Wir wollen \( F \) durch ein Vektorfeld, das maximal endlich 
+    häufig verschwindet, approximieren.
+    \pause
+
+    Betrachte die Funktionenalgebra \( \A \subset \C(\B) \) 
+    der reellen Polynome in zwei Variablen \pause
+    \[ \A = \set{ x \mapsto \sum_{i,j=0}^n c_{ij} x^i y^j \;|\; c_{ij} \in \R }. \]
+    \pause
+
+    Dies ist eine Algebra, die \textit{nirgends verschwindet} und \textit{Punkte trennt}.
+    \pause
+
+    Aus dem Satz von Stone-Weierstraß folgt, dass \(A\) dicht in \( \C(\B) \) ist 
+    und so können wir \( F = (F_1, F_2) \) durch Polynome 
+    \( F_1 \approx P, F_2 \approx Q \) approximieren.
 \end{frame}
