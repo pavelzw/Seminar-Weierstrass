@@ -9,7 +9,7 @@
 	%\vspace{\baselineskip}
 	Mit anderen Worten:
 	\pause
-	Für jedes $f\in C^0$ und jedes $\epsilon>0$ gibt es ein Polynom $p(x)$, sodass:
+	Für jedes $f\in C^0$ und jedes $\epsilon>0$ gibt es ein Polynom $p(x)$, sodass:\pause
 	\begin{equation*}
 		|f(x) - p(x)| < \epsilon
 	\end{equation*}
@@ -60,7 +60,7 @@
 \frame{
 	Sei $\epsilon>0$. \pause Wollen zeigen: \pause $|p_n(x) - f(x)| <\epsilon \quad \forall x\in[0,1]$ und n groß genug. \\
 	\pause
-	Da $f$ gleichmäßig stetig auf $[0,1]$, existiert $\delta>0$, sodass:\pause
+	Da $f$ gleichmäßig stetig auf $[0,1]$, existiert $\delta>0$, sodass:
 	\begin{align*}
 		|t-s| <\delta \Rightarrow |f(t) - f(s)| < \frac{\epsilon}{2}
 	\end{align*}
@@ -127,7 +127,7 @@
 	\pause
 	$|f|$ nimmt als stetige Funktion Maximum $M\in\mathbb{R}$ auf $[0,1]$ an.\pause
 	\begin{equation*}
-		\Rightarrow |c_k-f(x)|\pause\le 2M \quad\pause\forall x\in [0,1]
+		\Rightarrow |c_k-f(x)|\le 2M \quad\forall x\in [0,1]
 	\end{equation*}
 	\pause
 	Mit beiden Anschätzungen folgt für n groß genug:
@@ -146,7 +146,7 @@
 		r_k(x) = \binom{n}{k}x^k(1-x)^{n-k}
 	\end{equation*}
 	\pause
-	Betrachten binomischen Lehrsatz: \pause$(x+y)^n = \sum_{k=0}^n\binom{n}{k}x^ky^{n-k}$ 
+	Betrachten binomischen Lehrsatz: $(x+y)^n = \sum_{k=0}^n\binom{n}{k}x^ky^{n-k}$ 
 	\pause und setzen $y = 1-x$.
 	\pause
 	\begin{equation*}
@@ -168,6 +168,7 @@
 	\begin{equation}
 		n(n-1)(x+y)^{n-2} = \sum_{k=0}^n\binom{n}{k}k(k-1)x^{k-2}y^{n-k}
 	\end{equation}
+	\pause
 	Setzen wieder $y=1-x$. \pause Multiplizieren (1) mit $x$ und (2) mit $x^2$:
 	\pause
 	\begin{equation}
@@ -184,16 +185,18 @@
 	\ \\
 	\pause
 	Umstellen von (4) und einsetzen von (3):
+	\pause
 	\begin{equation}
 		\sum_{k=0}^nk^2r_k(x) \pause = n(n-1)x^2 + \sum_{k=0}^nkr_k(x) \pause = n(n-1)x^2 + nx
 	\end{equation}
 	\pause
 	Aus (3), (5) und der ersten Identität folgt:
+	\pause
 	\begin{equation*}
 		\begin{aligned}
 			\sum_{k=0}^n(k-nx)^2r_k(x) \pause = \sum_{k=0}^nk^2r_k(x) - 2nx\sum_{k=0}^nkr_k(x) 
 			+(nx)^2\sum_{k=0}^nr_k(x) \\
-			\pause = n(n-1)x^2 + nx \pause - 2(nx)^2 \pause + (nx)^2 = \pause -nx^2 \pause + nx \pause 
+			\pause = n(n-1)x^2 + nx \pause - 2(nx)^2 \pause + (nx)^2 \pause = -nx^2 + nx \pause 
 			= nx(1-x)
 		\end{aligned}
 	\end{equation*}
@@ -241,6 +244,7 @@
 	\end{equation*}
 	da $f=0$ außerhalb von $[0,1]$\\
 	\pause
+	\ \\
 	$\beta_n$ ist Polynom $\pause\Rightarrow$ können Potenzen von $x$ mit Linearität aus Integral ziehen \\ 
 	\pause $\Rightarrow$ $P_n(x)$ ist Polynom. 
 }
@@ -248,7 +252,7 @@
 \frame{
 	Zeigen zuerst:\\
 	\pause
-	Sei $\delta>0 \Rightarrow\beta_n(t)$ konvergiert gleichmäßig gegen $0$ \pause für $\delta\le|t|\le1.$\\
+	Sei $\delta>0 \Rightarrow\beta_n(t)$ konvergiert gleichmäßig gegen $0$ für $\delta\le|t|\le1.$\\
 	\ \\
 	\pause
 	Erinnerung: $\beta_n(t) = b_n(1-t^2)^n$.\\
