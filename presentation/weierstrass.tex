@@ -2,12 +2,13 @@
 
 \frame{\frametitle{Approximationssatz von Weierstrass}
 	\pause
-	\begin{Satz}
+	\begin{satz}
 		Die Menge der Polynome liegt dicht in $C^0([a,b],\mathbb{R})$.
-	\end{Satz}
+	\end{satz}
 	\pause
 	%\vspace{\baselineskip}
 	Mit anderen Worten:
+	\pause
 	Für jedes $f\in C^0$ und jedes $\epsilon>0$ gibt es ein Polynom $p(x)$, sodass:
 	\begin{equation*}
 		|f(x) - p(x)| < \epsilon
@@ -16,229 +17,304 @@
 	
 	\pause
 	\begin{block}{Bemerkung}
-		Für den Beweis kann man oBdA annehmen, dass $[a,b] = [0,1]$. Ansonten skaliert man $f$ einfach.
+		Für den Beweis kann man oBdA annehmen, dass $[a,b] = [0,1]$. Ansonsten skaliert man $f$ einfach.
 	\end{block}
 }
 
 \frame{\frametitle{Beweis 1}
-	Betrachten das n-te $Bernstein-Polynom$
+	\pause
+	Betrachten das n-te $Bernstein-Polynom:$
+	\pause
 	\begin{equation*}
 		p_n(x) = \sum_{k=0}^n\binom{n}{k} c_kx^k(1-x)^{n-k},
 	\end{equation*}
 	wobei $c_k = f(\frac{k}{n})$. \\
 	\ \\
+	\pause
 	Behauptung: $p_n(x)$ konvergiert gleichmäßig gegen $f$ für $n\to\infty$. \\
+	\pause
 	Dazu definieren wir:
 	\begin{equation*}
-		r_k(x) = \binom{n}{k} x^k(1-x)^{n-k}\ge 0
+		r_k(x) = \binom{n}{k} x^k(1-x)^{n-k} \pause\ge 0
 	\end{equation*}
 }
 
 \frame{
-	Für $r_k(x)$ gelten folgende Identitäten:
-	\begin{align*}
-		\sum_{k=0}^nr_k(x) = 1, \qquad \sum_{k=0}^n(k-nx)^2r_k(x) = nx(1-x)
-	\end{align*}
-	Beweis kommt später. \\
-	Damit gilt:
-	\begin{align*}
-		p_n(x) = \sum_{k=0}^nc_kr_k(x), \qquad f(x) = f(x)\sum_{k=0}^nr_k(x) = \sum_{k=0}^nf(x)r_k(x)
-	\end{align*}
+	Für $r_k(x)$ gelten folgende Identitäten: \pause
+	\begin{equation*}
+		\sum_{k=0}^nr_k(x) = 1, \qquad \pause \sum_{k=0}^n(k-nx)^2r_k(x) = nx(1-x)
+	\end{equation*}
+	\pause
+	Beweis kommt später. \pause
+	 \\
+	Damit gilt: \pause
+	\begin{equation*}
+		p_n(x) = \sum_{k=0}^nc_kr_k(x), \pause \qquad f(x)\pause =f(x)\sum_{k=0}^nr_k(x) 
+		\pause =\sum_{k=0}^nf(x)r_k(x)
+	\end{equation*}
+	\pause
 
-	$\Rightarrow p_n(x) - f(x) = \sum_{k=0}^n(c_k-f(x))r_k(x)$
+	$\Rightarrow p_n(x) - f(x)\pause =\sum_{k=0}^n(c_k-f(x))r_k(x)$
 }
 
 \frame{
-	Sei $\epsilon>0$. Wollen zeigen: $|p_n(x) - f(x)| <\epsilon \qquad \forall x\in[0,1]$ und n groß genug. \\
-	Da $f$ gleichmäßig stetig auf $[0,1]$, existiert $\delta>0$, sodass:
+	Sei $\epsilon>0$. \pause Wollen zeigen: \pause $|p_n(x) - f(x)| <\epsilon \quad \forall x\in[0,1]$ und n groß genug. \\
+	\pause
+	Da $f$ gleichmäßig stetig auf $[0,1]$, existiert $\delta>0$, sodass:\pause
 	\begin{align*}
 		|t-s| <\delta \Rightarrow |f(t) - f(s)| < \frac{\epsilon}{2}
 	\end{align*}
-	Definieren $K_1 = {k\in {0,...,n}: |\frac{k}{n}-x|<\delta} und K_2 = {0,...,n}\setminus K_1.$
-	\begin{align*}
-		|p_n(x) - f(x)| = \Big|\sum_{k=0}^n(c_k)-f(x))r_k(x)\Big|\le\sum_{k=0}^n|c_k-f(x)|r_k(x) \\
-		= \sum_{k\in K_1}|c_k-f(x)|r_k(x) + \sum_{k\in K_2}|c_k-f(x)|r_k(x)
-	\end{align*}
+	\pause
+	Definieren: \pause $K_1 = \left\{k\in \left\{0,...,n\right\}: |\frac{k}{n}-x|<\delta\right\}\quad$ \pause 
+	und $\quad K_2 = \left\{0,...,n\right\}\setminus K_1.$\pause
+	\begin{equation*}
+		\begin{aligned}
+			|p_n(x) - f(x)| \pause = \Big|\sum_{k=0}^n(c_k)-f(x))r_k(x)\Big| \pause\le\sum_{k=0}^n|c_k-f(x)|r_k(x) \\
+			\pause = \sum_{k\in K_1}|c_k-f(x)|r_k(x) + \sum_{k\in K_2}|c_k-f(x)|r_k(x)
+		\end{aligned}
+	\end{equation*}
+	\pause
 	Werden beide Summen gegen $\frac{\epsilon}{2}$ abschätzen.
 } 
 
 \frame{
 	\colorbox{yellow}{$\sum_{k\in K_1}|c_k-f(x)|r_k(x)$}\\
+	\pause
 	\ \\
-	Es gilt: $|t-s| <\delta \Rightarrow |f(t) - f(s)| < \frac{\epsilon}{2}$
-	\begin{align*}
-		\Rightarrow|c_k-f(x)| = \Big|f\Big(\frac{k}{n}\Big)-f(x)\Big| < \frac{\epsilon}{2} \qquad\forall k\in K_1, \qquad
-		\Big(\Big|\frac{k}{n}-x\Big|<\delta \quad \forall k\in K_1\Big)
-	\end{align*}
-	Mit $\sum_{k=0}^nr_k(x) =1$ folgt:
-	\begin{align*}
-		\sum_{k\in K_1}|c_k-f(x)|r_k(x)\le\sum_{k\in K_1}\frac{\epsilon}{2}r_k(x) 
-		\le\sum_{k=0}^n\frac{\epsilon}{2}r_k(x)= \frac{\epsilon}{2}
-	\end{align*}
-}
-
-\frame{
-	\colorbox{yellow}{$\sum_{k\in K21}|c_k-f(x)|r_k(x)$}\\
-	\ \\
-	Für $k\in K_2$ gilt:
-	\begin{align*}
-		\Big|\frac{k}{n}-x\Big| \ge \delta \quad\Leftrightarrow\quad 
-		|k-nx|\ge n\delta \quad\Leftrightarrow\quad (k-nx)^2\ge(n\delta)^2
-	\end{align*}
-	Mit der zweiten Identität von $r_k$ folgt:
-	\begin{align*}
-		nx(1-x) = \sum_{k=0}^n(k-nx)^2r_k(x)\ge \sum_{k\in K_2}(k-nx)^2r_k(x)\ge \sum_{k\in K_2}(n\delta)^2r_k(x)
-	\end{align*}
-	Also:
-	\begin{align*}
-		\sum_{k\in K_2}r_k(x) \le \frac{nx(1-x)}{(n\delta)^2}
-	\end{align*}
+	Es gilt: $|t-s| <\delta \Rightarrow |f(t) - f(s)| < \frac{\epsilon}{2}$ \pause
+	\begin{equation*}
+		\Rightarrow|c_k-f(x)| \pause = \Big|f\Big(\frac{k}{n}\Big)-f(x)\Big| \pause <\frac{\epsilon}{2} 
+		\qquad\forall k\in K_1, \pause\qquad\Big(\Big|\frac{k}{n}-x\Big|<\delta \quad \forall k\in K_1\Big)
+	\end{equation*}
+	\pause
+	Mit $\sum_{k=0}^nr_k(x) =1$ folgt: \pause
+	\begin{equation*}
+		\sum_{k\in K_1}|c_k-f(x)|r_k(x)\pause\le\sum_{k\in K_1}\frac{\epsilon}{2}r_k(x) 
+		\pause\le\sum_{k=0}^n\frac{\epsilon}{2}r_k(x) \pause = \frac{\epsilon}{2}
+	\end{equation*}
 }
 
 \frame{
 	\colorbox{yellow}{$\sum_{k\in K_2}|c_k-f(x)|r_k(x)$}\\
 	\ \\
-	Es gilt: $x(1-x)\le\frac{1}{4} \quad\forall x\in[0,1].$ Damit erhält man:
-	\begin{align*}
-		\sum_{k\in K_2}r_k(x) \le \frac{nx(1-x)}{(n\delta)^2}\le\frac{1}{4n\delta^2}
-	\end{align*}
-	$|f|$ nimtt als stetige Funktion Maximum $M\in\mathbb{R}$ auf $[0,1]$ an, sodass:
-	\begin{align*}
-		|c_k-f(x)|\le 2M \quad\forall x\in [0,1]
-	\end{align*}
+	\pause
+	Für $k\in K_2$ gilt:
+	\begin{equation*}
+		\Big|\frac{k}{n}-x\Big| \ge \delta \quad\pause\Leftrightarrow\quad 
+		|k-nx|\ge n\delta \quad\pause\Leftrightarrow\quad (k-nx)^2\ge(n\delta)^2
+	\end{equation*}
+	\pause
+	Mit der zweiten Identität von $r_k$ folgt: 
+	\pause
+	\begin{equation*}
+		nx(1-x) = \sum_{k=0}^n(k-nx)^2r_k(x)\pause\ge \sum_{k\in K_2}(k-nx)^2r_k(x)
+		\pause\ge \sum_{k\in K_2}(n\delta)^2r_k(x)
+	\end{equation*}
+	\pause
+	Also:
+	\begin{equation*}
+		\sum_{k\in K_2}r_k(x) \pause\le \frac{nx(1-x)}{(n\delta)^2}\pause = \frac{x(1-x)}{n\delta^2}
+	\end{equation*}
+}
+
+\frame{
+	\colorbox{yellow}{$\sum_{k\in K_2}|c_k-f(x)|r_k(x)$}\\
+	\ \\
+	Es gilt: $x(1-x)\le\frac{1}{4} \quad\forall x\in[0,1].$ \pause Damit erhält man:
+	\begin{equation*}
+		\sum_{k\in K_2}r_k(x) \le \frac{x(1-x)}{n\delta^2}\pause\le\frac{1}{4n\delta^2}
+	\end{equation*}
+	\pause
+	$|f|$ nimmt als stetige Funktion Maximum $M\in\mathbb{R}$ auf $[0,1]$ an.\pause
+	\begin{equation*}
+		\Rightarrow |c_k-f(x)|\pause\le 2M \quad\pause\forall x\in [0,1]
+	\end{equation*}
+	\pause
 	Mit beiden Anschätzungen folgt für n groß genug:
-	\begin{align*}
-		\sum_{k\in K_2}|c_k-f(x)|r_k(x) \le 2M\sum_{k\in K_2}r_k(x) \le \frac{M}{2n\delta^2} \le \frac{\epsilon}{2}
-	\end{align*}
+	\pause
+	\begin{equation*}
+		\sum_{k\in K_2}|c_k-f(x)|r_k(x) \pause\le 2M\sum_{k\in K_2}r_k(x) 
+		\pause\le \frac{M}{2n\delta^2} \pause\le \frac{\epsilon}{2}
+	\end{equation*}
 }
 
 \frame{
 	Bleiben noch die beiden Identitäten von $r_k$ zu zeigen. \\
+	\pause
 	Erinnerung:
-	\begin{align*}
+	\begin{equation*}
 		r_k(x) = \binom{n}{k}x^k(1-x)^{n-k}
-	\end{align*}
-	Betrachten binomischen Lehrsatz: $(x+y)^n = \sum_{k=0}^n\binom{n}{k}x^ky^{n-k}$ und setzen $y = 1-x$.
-	\begin{align*}
-		\Rightarrow \sum_{k=0}^nr_k(x) = (x+(1-x))^n  = 1
-	\end{align*}
+	\end{equation*}
+	\pause
+	Betrachten binomischen Lehrsatz: \pause$(x+y)^n = \sum_{k=0}^n\binom{n}{k}x^ky^{n-k}$ 
+	\pause und setzen $y = 1-x$.
+	\pause
+	\begin{equation*}
+		\Rightarrow \sum_{k=0}^nr_k(x) \pause = (x+(1-x))^n  \pause = 1
+	\end{equation*}
+	\pause
 	Dies war gerade die erste Identität.
 }
 
 \frame{
 	Zweite Identität: $\sum_{k=0}^n(k-nx)^2r_k(x) = nx(1-x).$ \\
+	\pause
 	Betrachten wieder binomischen Lehrsatz und leiten zweimal nach $x$ ab:
+	\pause
 	\begin{equation}
 		n(x+y)^{n-1} = \sum_{k=0}^n \binom{n}{k}kx^{k-1}y^{n-k}
 	\end{equation}
+	\pause
 	\begin{equation}
 		n(n-1)(x+y)^{n-2} = \sum_{k=0}^n\binom{n}{k}k(k-1)x^{k-2}y^{n-k}
 	\end{equation}
-	Setzen wieder $y=1-x$. Multiplizieren (1) mit $x$ und (2) mit $x^2$:
+	Setzen wieder $y=1-x$. \pause Multiplizieren (1) mit $x$ und (2) mit $x^2$:
+	\pause
 	\begin{equation}
-		nx = \sum_{k=0}^n\binom{n}{k}kx^k(1-x)^{n-k} = \sum_{k=0}^nkr_k(x)
+		nx \pause = \sum_{k=0}^n\binom{n}{k}kx^k(1-x)^{n-k} \pause = \sum_{k=0}^nkr_k(x)
 	\end{equation}
+	\pause
 	\begin{equation}
-		n(n-1)x^2 = \sum_{k=0}^n\binom{n}{k}k(k-1)x^k(1-x)^{n-k} = \sum_{k=0}^nk(k-1)r_k(x)
+		n(n-1)x^2 \pause = \sum_{k=0}^n\binom{n}{k}k(k-1)x^k(1-x)^{n-k} \pause = \sum_{k=0}^nk(k-1)r_k(x)
 	\end{equation}
 }
 
 \frame{
-	$nx = \sum_{k=0}^nkr_k(x) \quad (3) \qquad n(n-1)x^2 = \sum_{k=0}^nk(k-1)r_k(x) \quad(4)$ \\
+	$nx = \sum_{k=0}^nkr_k(x) \quad (3), \qquad n(n-1)x^2 = \sum_{k=0}^nk(k-1)r_k(x) \quad(4)$ \\
 	\ \\
+	\pause
 	Umstellen von (4) und einsetzen von (3):
 	\begin{equation}
-		\sum_{k=0}^nk^2r_k(x) = n(n-1)x^2 + \sum_{k=0}^nkr_k(x) = n(n-1)x^2 + nx
+		\sum_{k=0}^nk^2r_k(x) \pause = n(n-1)x^2 + \sum_{k=0}^nkr_k(x) \pause = n(n-1)x^2 + nx
 	\end{equation}
+	\pause
 	Aus (3), (5) und der ersten Identität folgt:
-	\begin{align*}
-		\sum_{k=0}^n(k-nx)^2r_k(x) = \sum_{k=0}^nk^2r_k(x) - 2nx\sum_{k=0}^nkr_k(x) 
-		+(nx)^2\sum_{k=0}^nr_k(x) \\
-		= n(n-1)x^2 + nx - 2(nx)^2 + (nx)^2 = -nx^2 + nx = nx(1-x)
-	\end{align*}
-
+	\begin{equation*}
+		\begin{aligned}
+			\sum_{k=0}^n(k-nx)^2r_k(x) \pause = \sum_{k=0}^nk^2r_k(x) - 2nx\sum_{k=0}^nkr_k(x) 
+			+(nx)^2\sum_{k=0}^nr_k(x) \\
+			\pause = n(n-1)x^2 + nx \pause - 2(nx)^2 \pause + (nx)^2 = \pause -nx^2 \pause + nx \pause 
+			= nx(1-x)
+		\end{aligned}
+	\end{equation*}
+	\pause
 	$\Rightarrow$ Zweite Identität\qed
 }
 
 \frame{\frametitle{Beweis 2}
-	Können Situation vereinfachen: \\
-	Sei $g(x) = f(x) - (mx + b) \quad$ mit $m= f(1)-f(0)$ und $b = f(0)$ \\
+	\pause
+	Können Problem umformulieren: \\
+	\pause
+	Sei $g(x) = f(x) - (mx + b), \quad$ mit $m= f(1)-f(0)$ und $b = f(0)$ \\
+	\pause
 	$\Rightarrow g(0) = g(1) = 0$ \\
+	\pause
 	$\Rightarrow$ $g$ durch Polynome approximierbar $\Leftrightarrow$ f durch Polynome approximierbar\\
 	\ \\
-	Sei also o.B.d.A $f(0) = f(1) = 0$ und $f(x) = 0 \quad\forall x\in\mathbb{R}\setminus[0,1].$\\
+	\pause
+	Sei also o.B.d.A $f(0) = f(1) = 0$ \pause und $f(x) = 0 \quad\forall x\in\mathbb{R}\setminus[0,1].$\\
+	\pause
 	$\Rightarrow$ $f$ stetig auf ganz $\mathbb{R}$\\
 	\ \\
+	\pause
 	Betrachten Hilfsfunktion:
-	\begin{align*}
-		\beta_n(t) = b_n(1-t^2)^n\ge0\quad -1\le t\le1,
-	\end{align*}
+	\pause
+	\begin{equation*}
+		\beta_n(t) = b_n(1-t^2)^n\pause\ge0\quad -1\le t\le1,
+	\end{equation*}
+	\pause
 	wobei $b_n$ so gewählt, dass $\int_{-1}^1\beta_n(t)\,dt = 1.$		
 }
 
 \frame{
 	Definieren:
-	\begin{align*}
+	\begin{equation*}
 		P_n(x) := \int_{-1}^1f(x+t)\beta_n(t)\,dt \quad x\in[0,1]
-	\end{align*}
+	\end{equation*}
+	\pause
 	Behauptung: $P_n$ ist Polynom und konvergiert gleichmäßig gegen $f$.\\
+	\pause
 	Substituieren mit $u = x+t$:
-	\begin{align*}
-		\Rightarrow P_n(x) = \int_{x-1}^{x+1}f(u)\beta_n(u-x)\,du = \int_0^1f(u)\beta_n(u-x)\,du
-	\end{align*}
+	\pause
+	\begin{equation*}
+		\Rightarrow P_n(x) = \int_{x-1}^{x+1}f(u)\beta_n(u-x)\,du \pause = \int_0^1f(u)\beta_n(u-x)\,du
+	\end{equation*}
 	da $f=0$ außerhalb von $[0,1]$\\
-	$\Rightarrow$ $P_n(x)$ ist Polynom. 
+	\pause
+	$\beta_n$ ist Polynom $\pause\Rightarrow$ können Potenzen von $x$ mit Linearität aus Integral ziehen \\ 
+	\pause $\Rightarrow$ $P_n(x)$ ist Polynom. 
 }
 
 \frame{
 	Zeigen zuerst:\\
-	Sei $\delta>0 \Rightarrow\beta_n(t)$ konvergiert gleichmäßig gegen $0$ für $\delta\le|t|\le1.$\\
+	\pause
+	Sei $\delta>0 \Rightarrow\beta_n(t)$ konvergiert gleichmäßig gegen $0$ \pause für $\delta\le|t|\le1.$\\
 	\ \\
+	\pause
 	Erinnerung: $\beta_n(t) = b_n(1-t^2)^n$.\\
+	\pause
 	Es gilt:
-	\begin{align*}
-		1 = \int_{-1}^1\beta_n(t)\,dt \ge \int_{\frac{-1}{\sqrt{n}}}^{\frac{1}{\sqrt{n}}}b_n(1-t^2)^n\,dt
-		\ge \int_{\frac{-1}{\sqrt{n}}}^{\frac{1}{\sqrt{n}}}b_n(1-\frac{1}{n})^n\,dt 
-		= b_n\frac{2}{\sqrt{n}}(1-\frac{1}{n})^n
-	\end{align*}
+	\begin{equation*}
+		1 = \int_{-1}^1\beta_n(t)\,dt \pause\ge \int_{\frac{-1}{\sqrt{n}}}^{\frac{1}{\sqrt{n}}}b_n(1-t^2)^n\,dt
+		\pause\ge \int_{\frac{-1}{\sqrt{n}}}^{\frac{1}{\sqrt{n}}}b_n(1-\frac{1}{n})^n\,dt 
+		\pause= b_n\frac{2}{\sqrt{n}}(1-\frac{1}{n})^n
+	\end{equation*}
+	\pause
 	Da $(1-\frac{1}{n})^n$ beschränkt, gilt:
-	\begin{align*}
-		b_n\le(1-\frac{1}{n})^{-n}\frac{\sqrt{n}}{2}\le c\sqrt{n}
-	\end{align*}	
+	\pause
+	\begin{equation*}
+		b_n\le(1-\frac{1}{n})^{-n}\frac{\sqrt{n}}{2}\pause\le c\sqrt{n}
+	\end{equation*}	
 	für eine Konstante $c\in \mathbb{R}$ und alle $n\ge2$.
 }
 
 \frame{
 	$b_n\le c\sqrt{n}$\\
+	\pause
 	Daraus folgt für $\delta\le|t|\le1$:
-	\begin{align*}
-		\beta_n(t) = b_n(1-t^2)^n\le c\sqrt{n}(1-t^2)^n\le c\sqrt{n}(1-\delta^2)^n\to 0\qquad (n\to\infty)
-	\end{align*}
+	\pause
+	\begin{equation*}
+		\beta_n(t) = b_n(1-t^2)^n\pause\le c\sqrt{n}(1-t^2)^n\pause\le c\sqrt{n}(1-\delta^2)^n
+		\pause\to 0\qquad (n\to\infty)
+	\end{equation*}
+	\pause
+	$\Rightarrow \beta_n\to 0$ gleichmäßig auf $\delta\le|t|\le1$. \\
+	\pause \ \\
 	Zeigen nun: $P_n\to f$ gleichm\"aßig.\\
 }
 
 \frame{
-	Sei $\epsilon>0$. Da $f$ gleichm\"aßig stetig auf $[0,1]$ existier $\delta>0$, sodass:
+	Sei $\epsilon>0$. \pause Da $f$ gleichm\"aßig stetig auf $[0,1]$ existiert $\delta>0$, sodass:
 	\begin{equation*}
-		|t|<\delta\Rightarrow |f(x+t) - f(x)|<\frac{\epsilon}{2}
+		|t|<\delta\Rightarrow |f(x+t) - f(x)|<\frac{\epsilon}{2}.
 	\end{equation*}
-	Erinnerung: $\int_{-1}^1\beta_n(t)\,dt = 1$ 
-	\begin{align*}
-		|P_n(x) - f(x)| = \bigg|\int_{-1}^1f(x+t)\beta_n(t)\,dt -f(x)\bigg| \\
-		= \bigg|\int_{-1}^1(f(x+t)-f(x))\beta_n(t)\,dt\bigg| \le\int_{-1}^1|f(x+t)-f(x)|\beta_n(t)\,dt \\ 
-		= \int_{|t|<\delta}|f(x+t)-f(x)|\beta_n(t)\,dt + \int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt \\
-		\le \frac{\epsilon}{2} + \int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt
-	\end{align*}
-}
+	\pause
+	Erinnerung: $\int_{-1}^1\beta_n(t)\,dt = 1$
+	\pause 
+	\begin{equation*}
+		\begin{aligned}|P_n(x) - f(x)| \pause= \bigg|\int_{-1}^1f(x+t)\beta_n(t)\,dt -f(x)\bigg| \\
+			\pause
+			= \bigg|\int_{-1}^1(f(x+t)-f(x))\beta_n(t)\,dt\bigg| \pause\le\int_{-1}^1|f(x+t)-f(x)|\beta_n(t)\,dt \\ 
+			\pause
+			= \int_{|t|<\delta}|f(x+t)-f(x)|\beta_n(t)\,dt + \int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt \\
+			\pause
+			\le \frac{\epsilon}{2} \pause+ \int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt
+		\end{aligned}
+	\end{equation*}
+}	
 
 \frame{
 	\colorbox{yellow}{$\int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt$}\\
 	\ \\
+	\pause
 	Sei $M\in\mathbb{R}$ das Maximum von $|f|$ auf $[0,1]$.\\
+	\pause
 	Wissen: $\beta_n(t)$ konvergiert gleichmäßig gegen $0$ für $\delta\le|t|\le1$.
-	\begin{align*}
-		\Rightarrow \int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt \le 2M\int_{|t|\ge\delta}\beta_n(t)\,dt\le \frac{\epsilon}{2}
-	\end{align*}
+	\pause
+	\begin{equation*}
+		\Rightarrow \int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt \pause\le 2M\int_{|t|\ge\delta}\beta_n(t)\,dt
+		\pause\le \frac{\epsilon}{2}
+	\end{equation*}
 	für n groß genug.
 	\qed
 }
