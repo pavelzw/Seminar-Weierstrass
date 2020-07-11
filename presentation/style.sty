@@ -8,6 +8,12 @@
 \RequirePackage{marvosym}
 \RequirePackage{tikz}
 
+\usepackage{xcolor}
+
+\newcommand{\cbox}[2][yellow]{%
+  \colorbox{#1}{\parbox{\dimexpr\linewidth-2\fboxsep}{\strut #2\strut}}%
+}
+
 \let\oldforall\forall
 \renewcommand{\forall}{\oldforall \,}
 \let\oldexists\exists

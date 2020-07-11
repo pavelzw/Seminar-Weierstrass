@@ -3,7 +3,7 @@
 \begin{frame}{Funktionenalgebra}
     \begin{defi}[Funktionenalgebra]
         Eine Menge \( \mathcal{A} \subset \mathcal{C}^0(M) \) heißt 
-        \textit{Funktionenalgebra}, wenn sie geschlossen unter Addition, 
+        \textit{Funktionenalgebra}, wenn sie abgeschlossen unter Addition, 
         skalarer Multiplikation und Funktionenmultiplikation ist, 
         d.~h. \( \forall f,g \in \A, c \in \mathbb{R} \)
         \[ f + g \in \mathcal{A}, \quad c \cdot f \in \mathcal{A}, \quad f \cdot g \in \mathcal{A}. \]
@@ -26,7 +26,8 @@
 \begin{frame}{Punktetrennend}
     \begin{defi}
         Eine Funktionenalgebra \(\A \subset \CM\) ist \textit{punktetrennend}, 
-        wenn \( \forall p_1, p_2 \in M \) eine Funktion \(f \in \A\) existiert, 
+        wenn für beliebige \( p_1, p_2 \in M \), \(p_1 \neq p_2\), 
+        eine Funktion \(f \in \A\) existiert, 
         sodass \( f(p_1) \neq f(p_2) \).
     \end{defi}
     \pause
@@ -39,7 +40,7 @@
     \pause
     \begin{bsp}
         Die Funktionenalgebra aller trigonometrischen Polynome auf \( [0,2\pi) \) 
-        separiert Punkte und verschwindet nirgends.
+        trennt Punkte und verschwindet nirgends.
     \end{bsp}
 \end{frame}
 
@@ -121,7 +122,7 @@
         Sei \( \A \subset \CM \) eine Funktionenalgebra 
         sowie \(M\) ein kompakter metrischer Raum.
         Dann ist \( \Abar \) ebenfalls eine Funktionenalgebra.
-    \end{lem}
+    \end{lem} \pause
     Beweis: \pause 
     Stimmt so. \qed
 \end{frame}
@@ -152,14 +153,13 @@
     \;\forall y \in [-\norm{f}, \norm{f}]. \]
     \pause
 
-    Schreiben wir nun \( q \) als 
+    Wir schreiben \( q \) nun als 
     \( q(y) = a_1 y + a_2 y^2 + \cdots + a_n y^n \) und 
     \[ g = a_1 f + a_2 f^2 + \cdots + a_n f^n. \]
     \pause
 
-    Da \( \Abar \) eine Funktionenalgebra nach Lemma \ref{abg-algebra}
-    und somit gilt 
-    \( g \in \Abar \). 
+    \( \Abar \) ist eine Funktionenalgebra (Lemma \ref{abg-algebra}).
+    Somit gilt \( g \in \Abar \). 
     \pause
 
     Sei \( x\in M \) und \( y = f(x) \). Dann gilt 
@@ -170,7 +170,7 @@
 \end{frame}
 
 \begin{frame}
-    Außerdem gilt falls \(f,g \in \Abar \)
+    Außerdem gilt, falls \(f,g \in \Abar \)
     \pause
     \begin{align*}
         \max(f,g) &= \frac{f+g}{2} + \frac{\abs{f-g}}{2}, \\
@@ -180,7 +180,7 @@
     Also gilt \( \max(f,g), \min(f,g) \in \Abar \). 
     \pause
 
-    Mittels Wiederholung können wir dies für beliebige 
+    Mittels Induktion können wir dies für beliebige endliche
     \( f_1, \ldots, f_n \in \Abar \) fortführen.
     \qed
 \end{frame}
@@ -215,6 +215,10 @@
 \end{frame}
 
 \begin{frame}
+    \cbox{Überdeckungskompakt: Für beliebige Überdeckung \( M = \bigcup_{i\in I} U_i \) 
+    existiert eine endliche Indexmenge \(J \subset I\), 
+    sodass \(M = \bigcup_{j\in J} U_j\) ist.}\vspace{0.5em} \\ 
+
     % todo Memo mit Überdeckungskompaktheit
     \begin{columns}
         \begin{column}{0.4\textwidth}
@@ -239,7 +243,7 @@
             Sei nun \(p\) variabel.
             \onslide<2->{\(G_p\) stetig}
             \onslide<3->{\( \Rightarrow \forall p \in M \;\exists V_p: \)
-            \[ x_p \in V_p \Rightarrow G_p(x) < F(x) + \varepsilon. \]}
+            \[ x \in V_p \Rightarrow G_p(x) < F(x) + \varepsilon. \]}
 
             \onslide<5->{Nun folgt wieder aus der Kompaktheit von \(M\), dass 
             endlich viele \( V_{p_1}, \ldots, V_{p_m} \) \(M\) überdecken.}
@@ -311,7 +315,7 @@
     Dies ist eine Algebra, die \textit{nirgends verschwindet} und \textit{Punkte trennt}.
     \pause
 
-    Aus dem Satz von Stone-Weierstraß folgt, dass \(A\) dicht in \( \C(\B) \) ist 
+    Aus dem Satz von Stone-Weierstraß folgt, dass \(\A\) dicht in \( \C(\B) \) ist 
     und so können wir \( F = (F_1, F_2) \) durch Polynome 
     \( F_1 \approx P, F_2 \approx Q \) approximieren.
 \end{frame}
