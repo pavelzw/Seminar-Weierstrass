@@ -277,21 +277,27 @@
 \section*{Anwendungen von Stone-Weierstraß}
 
 \begin{frame}
-    \begin{satz}
+    \begin{kor}
         Jede \(2\pi\)-periodische stetige Funktion kann gleichmäßig durch ein trigonometrisches Polynom 
         \[ T(x) = a_0 + \sum_{k=1}^n a_k \cos(kx) + \sum_{k=1}^n b_k \sin(kx) \]
         approximiert werden.
-    \end{satz}
+    \end{kor}
     \pause
     Beweis:
     \( [0,2\pi) \) parametrisiert den Einheitskreis \(S^1\) durch \( x \mapsto (\cos x, \sin x) \). 
     \pause
     \(S^1\) ist kompakt und jede \(2\pi\)-periodische Funktion auf \(\R\) wird hier zu einer 
     stetigen Funktion auf \(S^1\).
-    \pause
+\end{frame}
 
+\begin{frame}
     Die trigonometrischen Polynome bilden eine Funktionenalgebra \( \mathcal{T} \subset \C(S^1) \), 
     die \textit{nirgends verschwindet} und \textit{Punkte trennt}.
+    \pause 
+
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{images/sin-cos.pdf}
+    \end{center}
     \pause
 
     Nach dem Satz von Stone-Weierstraß liegt \( \mathcal{T} \) dicht in \( \C(S^1) \). \qed
@@ -318,4 +324,27 @@
     Aus dem Satz von Stone-Weierstraß folgt, dass \(\A\) dicht in \( \C(\B) \) ist 
     und so können wir \( F = (F_1, F_2) \) durch Polynome 
     \( F_1 \approx P, F_2 \approx Q \) approximieren.
+\end{frame}
+
+\begin{frame}{Weitere Anwendungen}
+    \begin{kor}
+        Seien \(K_1, K_2\) zwei kompakte metrische Räume
+        sowie \( \abb{f}{K_1 \times K_2}{\R} \) und \(\varepsilon > 0\) beliebig.
+        \pause
+        Dann existieren Funktionen 
+        \(f_k \in \C(K_1), g_k \in \C(K_2)\), 
+        \(1 \leq k \leq n\),
+        sodass 
+        \[ \left|\left| f - \sum_{k=1}^n f_k g_k \right|\right| < \varepsilon. \]
+    \end{kor}
+    \pause
+    Beweis: \pause
+    \( \A := \set{ (x,y) \mapsto \sum_{k=1}^n f_k(x) g_k(y), 
+    n\in \N, f_k \in \C(K_1), g_k \in \C(K_2)} \) bildet eine Funktionenalgebra, 
+    die Punkte trennt und nirgends verschwindet. 
+    \pause
+
+    Nach dem Satz von Stone-Weierstraß liegt 
+    \(\A\) dicht in \( \C(K_1 \times K_2) \).
+    \qed
 \end{frame}
