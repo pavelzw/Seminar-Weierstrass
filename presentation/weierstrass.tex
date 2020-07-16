@@ -17,13 +17,13 @@
 	
 	\pause
 	\begin{block}{Bemerkung}
-		Für den Beweis kann man oBdA annehmen, dass $[a,b] = [0,1]$. Ansonsten skaliert man $f$ einfach.
+		Für den Beweis kann man o. B. d. A. annehmen, dass $[a,b] = [0,1]$. Ansonsten skaliert man $f$ einfach.
 	\end{block}
 }
 
 \frame{\frametitle{Beweis 1}
 	\pause
-	Betrachten das n-te $Bernstein-Polynom:$
+	Betrachten das $n$-te \textit{Bernstein-Polynom:}
 	\pause
 	\begin{equation*}
 		p_n(x) = \sum_{k=0}^n\binom{n}{k} c_kx^k(1-x)^{n-k},
@@ -37,6 +37,8 @@
 	\begin{equation*}
 		r_k(x) = \binom{n}{k} x^k(1-x)^{n-k} \pause\ge 0
 	\end{equation*}
+	\pause
+	(beschreibt Binomiallverteilung)
 }
 
 \frame{
@@ -69,7 +71,7 @@
 	und $\quad K_2 = \left\{0,...,n\right\}\setminus K_1.$\pause
 	\begin{equation*}
 		\begin{aligned}
-			|p_n(x) - f(x)| \pause = \Big|\sum_{k=0}^n(c_k)-f(x))r_k(x)\Big| \pause\le\sum_{k=0}^n|c_k-f(x)|r_k(x) \\
+			|p_n(x) - f(x)| \pause = \Big|\sum_{k=0}^n(c_k-f(x))r_k(x)\Big| \pause\le\sum_{k=0}^n|c_k-f(x)|r_k(x) \\
 			\pause = \sum_{k\in K_1}|c_k-f(x)|r_k(x) + \sum_{k\in K_2}|c_k-f(x)|r_k(x)
 		\end{aligned}
 	\end{equation*}
@@ -78,13 +80,14 @@
 } 
 
 \frame{
-	\colorbox{yellow}{$\sum_{k\in K_1}|c_k-f(x)|r_k(x)$}\\
+	\colorbox{yellow}{$\sum_{k\in K_1}|c_k-f(x)|r_k(x),  \quad K_1 = \left\{k\in \left\{0,...,n\right\}: 
+		|\frac{k}{n}-x|<\delta\right\}$}\\
 	\pause
 	\ \\
 	Es gilt: $|t-s| <\delta \Rightarrow |f(t) - f(s)| < \frac{\epsilon}{2}$ \pause
 	\begin{equation*}
 		\Rightarrow|c_k-f(x)| \pause = \Big|f\Big(\frac{k}{n}\Big)-f(x)\Big| \pause <\frac{\epsilon}{2} 
-		\qquad\forall k\in K_1, \pause\qquad\Big(\Big|\frac{k}{n}-x\Big|<\delta \quad \forall k\in K_1\Big)
+		\qquad\forall k\in K_1
 	\end{equation*}
 	\pause
 	Mit $\sum_{k=0}^nr_k(x) =1$ folgt: \pause
@@ -130,7 +133,7 @@
 		\Rightarrow |c_k-f(x)|\le 2M \quad\forall x\in [0,1]
 	\end{equation*}
 	\pause
-	Mit beiden Anschätzungen folgt für n groß genug:
+	Mit beiden Anschätzungen folgt für $n$ groß genug:
 	\pause
 	\begin{equation*}
 		\sum_{k\in K_2}|c_k-f(x)|r_k(x) \pause\le 2M\sum_{k\in K_2}r_k(x) 
@@ -319,6 +322,6 @@
 		\Rightarrow \int_{|t|\ge\delta}|f(x+t)-f(x)|\beta_n(t)\,dt \pause\le 2M\int_{|t|\ge\delta}\beta_n(t)\,dt
 		\pause\le \frac{\epsilon}{2}
 	\end{equation*}
-	für n groß genug.
+	für $n$ groß genug.
 	\qed
 }
