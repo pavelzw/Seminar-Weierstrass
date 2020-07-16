@@ -18,7 +18,7 @@
     \end{defi}
     \pause
     \begin{bsp}
-        \( \A := \set{ x \mapsto \sum_{j=1}^n a_n x^n \;|\; n\in \N, a_j \in \R, j = 1,\ldots, n } \subset \mathcal{C}^0([-1,1]) \) 
+        \( \A := \set{ x \mapsto \sum_{j=1}^n a_j x^j \;|\; n\in \N, a_j \in \R, j = 1,\ldots, n } \subset \mathcal{C}^0([-1,1]) \) 
         verschwindet im Punkt \(0\).
     \end{bsp}
 \end{frame}
@@ -33,7 +33,7 @@
     \pause
     \begin{bsp}
         \( \A := \set{ x \mapsto \sum_{j=0}^n a_{j} x^{2j} \;|\; n\in\N, a_j \in \R, j = 1,\ldots, n } 
-        \subset \mathcal{C}^0([-1,1]) \)
+        \subset \C([-1,1]) \)
         trennt die Punkte \( z \) und \(-z\) (\(z \in [-1,1] \setminus \set{0} \)) nicht, da \( \forall f \in \A \) gilt 
         \( f(z) = f(-z) \).
     \end{bsp}
@@ -47,9 +47,9 @@
 
 \begin{frame}{Satz von Stone-Weierstraß}
     \begin{satz}[Satz von Stone-Weierstraß]
-        Sei \(M\) ein kompakter metrischer Raum und \( \mathcal{A} \) eine punktetrennende
-        Funktionenalgebra in \( \mathcal{C}^0(M) \), die nirgends verschwindet. 
-        Dann ist \( \mathcal{A} \) dicht in \( \mathcal{C}^0(M) \).
+        Sei \(M\) ein kompakter metrischer Raum und \( \A \) eine punktetrennende
+        Funktionenalgebra in \( \CM \), die nirgends verschwindet. 
+        Dann ist \( \A \) dicht in \( \CM \).
     \end{satz}
     \pause
     \begin{bem}
@@ -156,7 +156,7 @@
 
     Wir schreiben \( q \) nun als 
     \( q(y) = a_1 y + a_2 y^2 + \cdots + a_n y^n \) und 
-    \[ g = a_1 f + a_2 f^2 + \cdots + a_n f^n. \]
+    \[ g := a_1 f + a_2 f^2 + \cdots + a_n f^n. \]
     \pause
 
     \( \Abar \) ist eine Funktionenalgebra (Lemma \ref{abg-algebra}).
@@ -315,7 +315,7 @@
 
     Betrachte die Funktionenalgebra \( \A \subset \C(\B) \) 
     der reellen Polynome in zwei Variablen \pause
-    \[ \A = \set{ x \mapsto \sum_{i,j=0}^n c_{ij} x^i y^j \;|\; c_{ij} \in \R }. \]
+    \[ \A = \set{ (x, y) \mapsto \sum_{i,j=0}^n c_{ij} x^i y^j \;|\; c_{ij} \in \R }. \]
     \pause
 
     Dies ist eine Algebra, die \textit{nirgends verschwindet} und \textit{Punkte trennt}.
@@ -329,7 +329,7 @@
 \begin{frame}{Weitere Anwendungen}
     \begin{kor}
         Seien \(K_1, K_2\) zwei kompakte metrische Räume
-        sowie \( \abb{f}{K_1 \times K_2}{\R} \) und \(\epsilon > 0\) beliebig.
+        sowie \( \abb{f}{K_1 \times K_2}{\R} \) stetig und \(\epsilon > 0\) beliebig.
         \pause
         Dann existieren Funktionen 
         \(f_k \in \C(K_1), g_k \in \C(K_2)\), 
