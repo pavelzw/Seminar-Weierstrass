@@ -139,18 +139,18 @@
     Nach dem Satz von Weierstraß existiert ein Polynom 
     \( p(y) \), sodass 
     \[ \sup \set{ \abs{ p(y) - \abs{y} } 
-    \;|\; \abs{y} \leq \norm{f} } < \frac{\varepsilon}{2}, \]
+    \;|\; \abs{y} \leq \norm{f} } < \frac{\epsilon}{2}, \]
     da \( \abs{y} \in \C([-\norm{f}, \norm{f}]) \). 
     \pause
 
-    Der konstante Term dieses Polynoms ist höchstens \( \varepsilon / 2 \), 
-    da \( \abs{ p(0) - \abs{0} } < \varepsilon/2 \).
+    Der konstante Term dieses Polynoms ist höchstens \( \epsilon / 2 \), 
+    da \( \abs{ p(0) - \abs{0} } < \epsilon/2 \).
 \end{frame}
 
 \begin{frame}
     Sei \( q := p - p(0) \). Dann ist \( q(y) \) ein 
     Polynom mit Konstante \(0\) und es gilt 
-    \[ \abs{ q(y) - \abs{y} } < \varepsilon 
+    \[ \abs{ q(y) - \abs{y} } < \epsilon 
     \;\forall y \in [-\norm{f}, \norm{f}]. \]
     \pause
 
@@ -164,7 +164,7 @@
     \pause
 
     Sei \( x\in M \) und \( y = f(x) \). Dann gilt 
-    \[ \abs{ g(x) - \abs{f(x)} } = \abs{ q(y) - \abs{y} } < \varepsilon. \]
+    \[ \abs{ g(x) - \abs{f(x)} } = \abs{ q(y) - \abs{y} } < \epsilon. \]
     \pause
     
     Also folgt \( \abs{f} \in \Abarbar = \Abar \). 
@@ -189,9 +189,9 @@
 \begin{frame}{Beweis vom Satz von Stone-Weierstraß}
     Sei \( \A \) eine punktetrennende Funktionenalgebra in \(\CM\), die nirgends verschwindet. \pause
     Wir zeigen nun, dass \( \A \) dicht in \(\CM\) ist. \pause
-    D. h. für ein gegebenes \( F \in \CM, \varepsilon > 0 \) 
+    D. h. für ein gegebenes \( F \in \CM, \epsilon > 0 \) 
     müssen wir ein \( G \in \A \) finden, sodass 
-    \[ F(x) - \varepsilon < G(x) < F(x) + \varepsilon. \]
+    \[ F(x) - \epsilon < G(x) < F(x) + \epsilon. \]
     \pause
 
     Wir betrachten nun zwei Punkte \(p\neq q \in M\).
@@ -206,7 +206,7 @@
             Wir fixieren nun \(p\).
             \onslide<2->{Für jedes \(q \in M\) existiert eine Umgebung 
             \( U_q \)}\onslide<3->{, sodass 
-            \[ x \in U_q \Rightarrow F(x) - \varepsilon < H_{pq}(x). \]}
+            \[ x \in U_q \Rightarrow F(x) - \epsilon < H_{pq}(x). \]}
             % H_{pq} ist stetig
         \end{column}
         \begin{column}{0.6\textwidth}
@@ -229,7 +229,7 @@
             
             \onslide<4->{Nach Lemma \ref{betrag-in-algebra} gilt \( G_p \in \Abar \).}
             \onslide<5->{Es gilt nun \(G_p(p) = F(p)\)} \onslide<6->{sowie \( \forall x \in M \)
-            \[ F(x) - \varepsilon < G_p(x). \]}
+            \[ F(x) - \epsilon < G_p(x). \]}
         \end{column}
         \begin{column}{0.6\textwidth}
             \onslide<3->{\includegraphics[width=\textwidth]{images/stone-weierstrass-step2.png}}
@@ -243,7 +243,7 @@
             Sei nun \(p\) variabel.
             \onslide<2->{\(G_p\) stetig}
             \onslide<3->{\( \Rightarrow \forall p \in M \;\exists V_p: \)
-            \[ x \in V_p \Rightarrow G_p(x) < F(x) + \varepsilon. \]}
+            \[ x \in V_p \Rightarrow G_p(x) < F(x) + \epsilon. \]}
 
             \onslide<5->{Nun folgt wieder aus der Kompaktheit von \(M\), dass 
             endlich viele \( V_{p_1}, \ldots, V_{p_m} \) \(M\) überdecken.}
@@ -261,7 +261,7 @@
 
             \onslide<3->{Es folgt nun aus Lemma \ref{betrag-in-algebra}
             \( G \in \Abar \)} \onslide<4->{sowie 
-            \[ F(x) - \varepsilon < G(x) < F(x) + \varepsilon \;\forall x \in M. \]}
+            \[ F(x) - \epsilon < G(x) < F(x) + \epsilon \;\forall x \in M. \]}
 
             \onslide<5->{Also liegt \( \Abar \) dicht in \( \CM \)}\onslide<6->{, d. h. \( \Abar = \Abarbar = \CM \).}
 
@@ -329,13 +329,13 @@
 \begin{frame}{Weitere Anwendungen}
     \begin{kor}
         Seien \(K_1, K_2\) zwei kompakte metrische Räume
-        sowie \( \abb{f}{K_1 \times K_2}{\R} \) und \(\varepsilon > 0\) beliebig.
+        sowie \( \abb{f}{K_1 \times K_2}{\R} \) und \(\epsilon > 0\) beliebig.
         \pause
         Dann existieren Funktionen 
         \(f_k \in \C(K_1), g_k \in \C(K_2)\), 
         \(1 \leq k \leq n\),
         sodass 
-        \[ \left|\left| f - \sum_{k=1}^n f_k g_k \right|\right| < \varepsilon. \]
+        \[ \left|\left| f - \sum_{k=1}^n f_k g_k \right|\right| < \epsilon. \]
     \end{kor}
     \pause
     Beweis: \pause
